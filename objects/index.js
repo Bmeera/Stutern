@@ -22,9 +22,11 @@ Q. 2 Create 2 Instagram post objects from the constructor function you created a
 
 let InstagramPost1 = new InstagramPost("@bmeera", "Myra to the world!",
 "https://www.instagram.com/@bmeera/img1", 200000, 100000)
+console.log(InstagramPost1)
 
 let InstagramPost2 = new InstagramPost("@danielodediran", "Tech Bro with the swag", 
 "https://www.instagram.com/danielodediran/img3", 140000, 35000)
+console.log(InstagramPost2)
 
 /* 
 Q. 3 Musa Dawodu is a 19 years old Nigerian male who lives with his parents in Lekki, Lagos State. Recently, he wrote the JAMB exam and had the following scores in his combination:
@@ -95,3 +97,41 @@ console.log(baniPhotograph);
 let jomiPhotograph = {...amyPhotograph}
 jomiPhotograph.imageDescription = "an AI-drawn picture of Jomi swimming"
 console.log(jomiPhotograph);
+
+//Method 3 - using JSON.parse(JSON.stringify(object_name))
+//JSON stands for JavaScript Object Notation. it's a format for representing data in JS
+
+let davidPhotograph = JSON.parse(JSON.stringify(amyPhotograph));
+davidPhotograph.name = "David"
+console.log(davidPhotograph);
+
+/*
+As Nigeria goes to the polls, here is an object representing some of the Presidential Candidates:
+
+const presidentialCandidates = {
+   AAC: 'Omoyele Sowore',
+   ACCORD: 'Christopher Imumolen',
+   APC: 'Bola Ahmed Tinubu',
+   LP: 'Peter Obi',
+   NNPP: 'Rabiu Kwankwaso',
+   PDP: 'Atiku Abubakar',
+}
+Using any of the enumeration methods taught in class (for…in  or for..of), log out each of the presidential candidates in this format:
+	’Omoyele Sowore is the presidential candidate of AAC’
+*/
+
+const presidentialCandidates = {
+    AAC: 'Omoyele Sowore',
+    ACCORD: 'Christopher Imumolen',
+    APC: 'Bola Ahmed Tinubu',
+    LP: 'Peter Obi',
+    NNPP: 'Rabiu Kwankwaso',
+    PDP: 'Atiku Abubakar',
+ }
+ 
+
+for(key in presidentialCandidates) {
+    console.log(presidentialCandidates[key]+ " is the presidential candidate of "+ key);
+}
+
+console.log("\nGo out and vote!");
