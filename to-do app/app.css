@@ -1,4 +1,4 @@
-.root {
+:root {
     --body-font: 'Figtree', sans-serif;
 
     --color-body: #e8f3f8;
@@ -148,4 +148,58 @@ small,
 .stats span:first-child{
     background-color: var(--color-header);
     color: var(--color-text-muted);
+    border-radius: var(--global-border-radius) 0 0
+    var(--global-border-radius)
 }
+
+.stats span:nth-child(2){
+    background-color: var(--color-tertiary);
+    color: var(--color-body);
+    border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+    font-weight: 700;
+}
+
+/* To Do List */
+.todos{
+    margin-bottom: 4rem;
+}
+.todos li{
+    background-color: white;
+    border-radius: var(--global-border-radius);
+    margin-bottom: 1rem;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Media Queries 768px and above */
+@media screen and (min-width: 768px){
+    .container{
+        max-width: 30rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    #todo-form{
+        flex-direction: row;
+    }
+
+    #todo-form input{
+        flex-grow: 1;
+    }
+}
+
+/* Media Queries 1024px and above */
+@media screen and (min-width: 1024px) {
+    .stats{
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 0;
+        transform: translateX(-100%);
+        padding-right: 4rem;
+    }
+}
+
